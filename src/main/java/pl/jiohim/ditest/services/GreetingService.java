@@ -1,6 +1,6 @@
 package pl.jiohim.ditest.services;
 
-public interface GreetingSrvice {
+public interface GreetingService {
 
     String sayGreeting();
 }
