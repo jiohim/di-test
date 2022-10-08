@@ -3,10 +3,7 @@ package pl.jiohim.ditest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import pl.jiohim.ditest.controllers.ConstructorInjectedContorller;
-import pl.jiohim.ditest.controllers.MyController;
-import pl.jiohim.ditest.controllers.PropertyInjectedController;
-import pl.jiohim.ditest.controllers.SetterBasedController;
+import pl.jiohim.ditest.controllers.*;
 
 @SpringBootApplication
 public class DiTestApplication {
@@ -17,9 +14,13 @@ public class DiTestApplication {
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
-		String greeting = myController.sayHello();
+		I18nController i18nController = (I18nController)ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
-		System.out.println(greeting);
+
+
+		System.out.println("-------------Primary");
+		System.out.println(myController.sayHello());
 
 
 		System.out.println("-------------Property");
